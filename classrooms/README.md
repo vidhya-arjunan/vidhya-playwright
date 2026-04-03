@@ -1,9 +1,16 @@
-# Assignments
+# Playwright Learning - Vidhya
 
-Day1:
-1. Type of variables
-2. Scope of let var and const
+This repository contains my learning and practice using Playwright.
 
-Day2:
-1. Conditional Statements (Printing Odd Numbers & Switch Case)
-2. Strings (Alphabet Occurence & Reversing String)
+## 📂 Structure
+
+- classrooms → Concepts practiced during sessions
+- home-assignments → Homework and exercises
+
+## 📅 Weekly Progress
+
+### Week 1
+- Variables and data types
+- var, let, const
+- Conditional statements
+- Basic string problems
