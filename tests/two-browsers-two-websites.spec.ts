@@ -28,6 +28,7 @@ import { chromium, firefox, test } from "@playwright/test"
 
 test('Red Bus in Edge', async () => {
     const browser = await chromium.launch({ channel: 'msedge' });
+    console.log("Browser type: " + browser.browserType().name())
     const browserContext = await browser.newContext();
     const page = await browserContext.newPage();
     await page.goto("https://platform.testleaf.com/");
@@ -39,6 +40,7 @@ test('Red Bus in Edge', async () => {
 
 test('Flipkart in Firefox', async () => {
     const browser = await firefox.launch();
+    console.log("Browser type: " + browser.browserType().name())
     const browserContext = await browser.newContext();
     const page = await browserContext.newPage();
     await page.goto("https://www.flipkart.com");

@@ -10,22 +10,25 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     screenshot: 'on',
-    video: 'on'
+    video: 'on',
+    headless: false
   },
   projects: [
-    {
+    /* {
         name: 'default',
         use: {}
-    }
-    /* {
+    } */
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    }, */
-    /* {
+
+    },
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-    }, */
-    /* {
+    },
+    /*
+    {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     }, */
