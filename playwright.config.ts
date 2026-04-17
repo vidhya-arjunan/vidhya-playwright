@@ -11,26 +11,29 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'on',
     video: 'on',
-    headless: false
+    headless: false,
+    permissions: []
   },
+
+
   projects: [
-    /* {
-        name: 'default',
-        use: {}
-    } */
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
 
     },
-    {
+    /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-    },
+    }, */
     /*
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     }, */
+     /* {
+        name: 'default',
+        use: {}
+    } */
   ],
 });
