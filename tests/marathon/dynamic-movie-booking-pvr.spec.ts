@@ -30,9 +30,12 @@ test("Dynamic Ticket Booking - PVR", async ({page}) => {
 //Navigate to https://www.pvrcinemas.com/.
 
 await page.goto("https://www.pvrcinemas.com/");
-expect(page.title()).toBe("PVR Cinemas");
+await expect(page).toHaveTitle("PVR Cinemas");
 
 //Select the required city.
 
+//await page.locator(`//div[@class="cities-names"]/span[text()='Chennai']`).click();
+//await page.locator(".p-dropdown-label.p-inputtext.p-placeholder .cities-placed").getByText("Chennai").click();
 
+await page.locator(".sc-lgpSej.kdusLc.pointer").click();
 });
