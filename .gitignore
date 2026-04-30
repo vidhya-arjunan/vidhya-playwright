@@ -8,3 +8,4 @@ node_modules/
 /playwright/.auth/
 utils/storageInfoSalesforce.json
 utils/storageInfoLeaftaps.json
+storage*.json
