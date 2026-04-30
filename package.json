@@ -11,5 +11,10 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.5.0"
+  },
+  "dependencies": {
+    "csv": "^6.5.1",
+    "dotenv": "^17.4.2",
+    "parse": "^8.6.0"
   }
 }
