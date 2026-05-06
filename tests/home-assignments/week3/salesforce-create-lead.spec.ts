@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { faker } from "@faker-js/faker"
 
 test.use({ storageState: "utils/storageInfoSalesforce.json" })
 test("Salesforce Create Lead", async ({ page }) => {
@@ -22,6 +23,14 @@ await page.locator('one-app-launcher-modal').getByRole('link', { name: 'Sales', 
 await page.locator("one-app-nav-bar one-app-nav-bar-item-root").filter({hasText: "Leads"}).getByRole("link", {name: "Leads"}).click();
 await page.locator(".slds-page-header__row").getByRole("button",{name: "New"}).click();
 
-await page.pause();
+//entering details
+await page.getByRole("combobox", {name: "Salutation"}).click();
+await page.getByRole("option", {name: "Mr."}).click();
+await page.getByLabel("Last Name").fill(faker.person.lastName());
+await page.locator("lightning-primitive-input-simple").getByLabel("Company").fill(faker.company.name());
+await page.getByRole("button",{name: "Save", exact: true}).click();
+
+//assertion
+expect(await page.locator(`div[data-key="success"]`).innerText()).toContain("created");
 
 });

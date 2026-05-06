@@ -34,13 +34,14 @@ Assignment: 1 Create a Lead
 retrying assertions  */
 
 import { test, expect } from '@playwright/test'
+import 'dotenv/config'
 
 test("create lead", async ({ page }) => {
 
     //logging in 
     await page.goto("https://leaftaps.com/opentaps/control/main");
-    await page.getByLabel("Username").fill("Demosalesmanager");
-    await page.getByLabel("Password").fill("crmsfa");
+    await page.getByLabel("Username").fill(process.env.LT_USERNAME!);
+    await page.getByLabel("Password").fill(process.env.LT_PASSWORD!);
     await page.locator(".decorativeSubmit").click();
     await page.getByRole("link", { name: "CRM/SFA" }).click();
 

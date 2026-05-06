@@ -35,6 +35,6 @@ test("frames", async ({ page }) => {
     await page.frameLocator(`iframe[name="iframeResult"]`)
         .getByRole("button", { name: "Try it" }).click()
 
-            console.log(await page.frameLocator(`iframe[name="iframeResult"]`).locator("#demo").innerText());
+    console.log(await page.frameLocator(`iframe[name="iframeResult"]`).locator("#demo").innerText());
 
 });

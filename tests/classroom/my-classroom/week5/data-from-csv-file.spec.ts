@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from "path"
 
 let loginData:any[]
-loginData=parse(fs.readFileSync(path.join(__dirname, '../../../Data/credentials.csv')),{
+loginData=parse(fs.readFileSync(path.join(__dirname, '../../../../data/credentials.csv')),{
      columns:true,
      skip_empty_lines:true,
 })

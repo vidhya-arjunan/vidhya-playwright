@@ -11,8 +11,9 @@ test("Salesforce Create New Account", async ({ page }) => {
 
     //App Launcher
     await page.locator(`.slds-button.slds-context-bar__button.slds-icon-waffle_container.slds-show[title="App Launcher"]`).click();
-    await page.locator(`.container lightning-button`).getByText("View All").click();
-    await page.waitForLoadState('load');
+    // Wait for the modal AND tiles to load first. And click View All
+    await page.locator('one-app-launcher-menu-item').first().waitFor({ state: 'visible' });
+    await page.locator('.container lightning-button').getByText("View All").click();
 
     //selecting Service
     await page.locator("one-app-launcher-modal").getByPlaceholder("Search apps or items...").fill("Service");
@@ -27,7 +28,6 @@ test("Salesforce Create New Account", async ({ page }) => {
 
     //create New Account
     await page.getByRole("button", { name: "New" }).click();
-    await page.pause();
     await page.locator(`lightning-primitive-input-simple input[name="Name"]`).fill("Vijay");
     await page.locator(`//lightning-button/button[text()="Save"]`).click();
 

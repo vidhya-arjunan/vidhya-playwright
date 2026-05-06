@@ -9,3 +9,5 @@ node_modules/
 utils/storageInfoSalesforce.json
 utils/storageInfoLeaftaps.json
 storage*.json
+tests/classroom/class-notes-code
+.env
